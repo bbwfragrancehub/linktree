@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bath & Body Works - Fragrance Inspiration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500;600&display=swap">
+    <style>
+        :root {
+            --primary: #2c1a4a;
+            --secondary: #6a1b9a;
+            --accent: #d69a2d;
+            --light: #f8f5fc;
+            --dark: #1a1a2e;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f8f5fc 0%, #e6e1f2 100%);
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+        
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin: 15px 0 10px;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        .description {
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #555;
+            max-width: 90%;
+            line-height: 1.7;
+        }
+        
+        .highlight { color: var(--secondary); font-weight: 500; }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin: 30px 0 15px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 20px 0;
+        }
+        
+        .link {
+            background: white;
+            padding: 18px 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .link:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: 0.5s;
+        }
+        
+        .link:hover:before { left: 100%; }
+        
+        .link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            border-color: var(--accent);
+        }
+        
+        .link i {
+            font-size: 22px;
+            color: var(--secondary);
+            width: 24px;
+        }
+        
+        .link-text { flex: 1; }
+        
+        .link small {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: #777;
+            margin-top: 4px;
+        }
+        
+        .disclaimer {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            color: #666;
+            line-height: 1.6;
+            box-shadow: var(--shadow);
+            border-top: 2px dotted #aaa;
+            width: 60%;
+            margin: 40px auto 0;
+            padding-top: 25px;
+        }
+        
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #777;
+            padding: 20px 0;
+        }
+        
+        .content-category { margin-bottom: 30px; }
+        
+        @media (max-width: 600px) {
+            .logo { font-size: 2rem; }
+            h1 { font-size: 1.7rem; }
+            .description { font-size: 1rem; }
+            .link { padding: 16px 20px; }
+            .link i { font-size: 20px; }
+            .section-title { font-size: 1.3rem; }
+            .disclaimer { width: 90%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Bath & Body Works</div>
+            <div class="tagline">Fragrance Inspiration & Self-Care Tips</div>
+        </header>
+        
+        <div class="profile">
+            <img src="https://i.ibb.co/VpB70xLj/Logo.webp" alt="Bath & Body Works Products" class="profile-img">
+            <h1>Fragrance Education & Samples</h1>
+            <p class="description">Discover the art of fragrance layering, self-care rituals, and exclusive samples to elevate your daily routine.</p>
+        </div>
+        
+        <div class="content-category">
+            <h2 class="section-title">Helpful Guides</h2>
+            <div class="links">
+                <a href="https://bbw.staticrun.app/fragrance-layering" class="link">
+                    <i class="fas fa-book"></i>
+                    <div class="link-text">Fragrance Layering Guide <small>How to create your signature scent</small></div>
+                </a>
+                
+                <a href="https://bbw.staticrun.app/selfcare-rituals" class="link">
+                    <i class="fas fa-spa"></i>
+                    <div class="link-text">Self-Care Rituals <small>Transform your bath time into a spa experience</small></div>
+                </a>
+                
+                <a href="https://bbw.staticrun.app/seasonal-scents" class="link">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class="link-text">Seasonal Scent Guide <small>Best fragrances for each season</small></div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="content-category">
+            <h2 class="section-title">Free Samples</h2>
+            <div class="links">
+                <a href="https://bbw.staticrun.app/free-samples" class="link">
+                    <i class="fas fa-gift"></i>
+                    <div class="link-text">Signature Fragrance Samples <small>New seasonal scents</small></div>
+                </a>
+                
+                <a href="https://bbw.staticrun.app/body-care-samples" class="link">
+                    <i class="fas fa-soap"></i>
+                    <div class="link-text">Body Care Collection <small>Moisturizers & lotions</small></div>
+                </a>
+                
+                <a href="https://bbw.staticrun.app/home-fragrance-samples" class="link">
+                    <i class="fas fa-wind"></i>
+                    <div class="link-text">Home Fragrance Samples <small>Candles & room sprays</small></div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="content-category">
+            <h2 class="section-title">Inspiration</h2>
+            <div class="links">
+                <a href="https://bbw.staticrun.app/home-fragrance-tips" class="link">
+                    <i class="fas fa-lightbulb"></i>
+                    <div class="link-text">Home Fragrance Tips <small>Create inviting spaces with scent</small></div>
+                </a>
+                
+                <a href="https://bbw.staticrun.app/mindful-scent" class="link">
+                    <i class="fas fa-heart"></i>
+                    <div class="link-text">Mindfulness Through Scent <small>Using fragrance for relaxation</small></div>
+                </a>
+                
+                <a href="https://bbw.staticrun.app/gifting-guide" class="link">
+                    <i class="fas fa-gift"></i>
+                    <div class="link-text">Gifting Guide <small>Perfect presents for every personality</small></div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="disclaimer">
+            <p>Note: This is not the official Bath & Body Works website. This page provides links to Bath & Body Works samples through an affiliate program. Availability of free samples may vary and are subject to change without notice.</p>
+        </div>
+        
+        <footer>
+            <p>© 2025 Bath & Body Works Inspiration | Fragrance Education & Self-Care Tips</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.link');
+            links.forEach((link, index) => {
+                link.style.opacity = 0;
+                link.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    link.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    link.style.opacity = 1;
+                    link.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
+</body>
+  </html>
